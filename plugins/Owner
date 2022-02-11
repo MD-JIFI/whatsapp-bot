@@ -1,0 +1,57 @@
+const walker = require('../Utilis/events')
+
+const {MessageType, GroupSettingChange, Mimetype, MessageOptions} = require('@adiwajshing/baileys')
+
+const { getBuffer } = require('../Utilis/download')
+
+//Owner vcard by ꪶ i'm md jifi 
+
+walker.addCommand( //by walker...
+
+  { pattern: "owner ?(.*)", fromMe: true, desc: "send owner vcard" },
+
+async (message, match) => {
+
+const vcard = 'https://i.imgur.com/Gk5TtV4.jpeg'
+
+const walker = 'BEGIN:VCARD\n'
+
+            + 'VERSION:3.0\n' 
+
+            + 'FN:' + ' ⛾  𝖒𝖉 𝖏𝖎𝖋𝖎 𝖕ₓ₉₈ ' + '\n' //dont copy without credits ⚠️
+
+            + 'ORG:𝑇𝑜𝑥𝑖𝑐 𝐴𝑙𝑒𝑥𝑎 𝑏𝑜𝑡 𝑜𝑤𝑛𝑒𝑟;\n' 
+
+            + 'TEL;type=CELL;type=VOICE;waid=' + '919995801023' + ':' + '919995801023' + ' \n'
+
+            + 'END:VCARD'
+
+const buff = await getBuffer(vcard)
+
+await message.client.sendMessage(message.jid, {displayname: "  𝖒𝖉 𝖏𝖎𝖋𝖎 𝖕ₓ₉₈  ⛾ ", vcard: walker}, MessageType.contact,{quoted : {
+
+  key: {
+
+        fromMe: false,
+
+        participant: "0@s.whatsapp.net",
+
+        remoteJid: "status@broadcast"
+
+      }, //Vcard sender by  𝖒𝖉-𝖏𝖎𝖋𝖎͢ 𝖕͛  𔒝
+
+      message: {
+
+        "imageMessage": {
+
+          "jpegThumbnail": buff.buffer,
+
+          "caption": " 𝐓𝚯𝚾𝚰𝐂 ₪ 𝚨𝐋𝚵𝚾𝚨  ⷡⷡⷡⷡ  ⷪⷪⷪⷪ  ⷮⷮⷮⷮ "
+
+        }
+
+      }
+
+   }}) //owner vcard sender
+
+}); //Coded by  ད _ɪᴛs ᴍᴇ͢͢͢  ᴍᴅ ᴊɪғɪ_ ཌ⁴⁰⁴⁩
